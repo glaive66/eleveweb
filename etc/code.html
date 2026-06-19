@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>eleveweb | 프리미엄 웹 비즈니스 파트너</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#76849f",
+                    "on-secondary-container": "#fefcff",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed": "#001a41",
+                    "on-error": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b9c7e4",
+                    "secondary-fixed": "#d8e2ff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#38debb",
+                    "on-secondary-fixed-variant": "#004493",
+                    "on-primary-fixed": "#0d1c32",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-surface-variant": "#44474d",
+                    "primary": "#000000",
+                    "secondary-container": "#0070ea",
+                    "secondary-fixed-dim": "#adc7ff",
+                    "tertiary-fixed": "#5ffbd6",
+                    "on-background": "#191c1e",
+                    "tertiary": "#000000",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-variant": "#e0e3e5",
+                    "background": "#f7f9fb",
+                    "tertiary-container": "#002019",
+                    "primary-container": "#0d1c32",
+                    "on-surface": "#191c1e",
+                    "inverse-primary": "#b9c7e4",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-tint": "#515f78",
+                    "outline": "#75777e",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#39475f",
+                    "on-tertiary-fixed-variant": "#005142",
+                    "surface-bright": "#f7f9fb",
+                    "on-tertiary-container": "#00957b",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#c5c6cd",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#002019",
+                    "on-error-container": "#93000a",
+                    "secondary": "#0059bb",
+                    "surface-dim": "#d8dadc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap-mobile": "64px",
+                    "section-gap-desktop": "120px",
+                    "stack-sm": "8px",
+                    "grid-gutter": "24px",
+                    "container-max": "1280px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "label-caps": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            color: #191c1e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background-color: rgba(247, 249, 251, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .global-shadow {
+            box-shadow: 0px 20px 40px rgba(10, 25, 47, 0.05);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 30px 60px rgba(10, 25, 47, 0.1);
+        }
+        .transition-standard {
+            transition: all 0.3s ease-in-out;
+        }
+        .nav-active {
+            color: #0059bb;
+            border-bottom: 2px solid #0059bb;
+            padding-bottom: 4px;
+        }
+        .primary-button {
+            background-color: #0d1c32;
+            color: white;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .primary-button:hover {
+            background-color: #000000;
+        }
+        .secondary-button {
+            border: 2px solid #0059bb;
+            color: #0059bb;
+        }
+        .secondary-button:hover {
+            background-color: rgba(0, 89, 187, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 glass-nav shadow-[0px_20px_40px_rgba(10,25,47,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1280px] mx-auto w-full">
+<a class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight" href="#">eleveweb</a>
+<nav class="hidden md:flex items-center space-x-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#portfolio">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+<a class="primary-button px-6 py-2 rounded-lg font-semibold transition-standard active:scale-95" href="#contact">Get Started</a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center pt-24 overflow-hidden bg-surface-container-lowest">
+
+<div class="max-w-[1280px] mx-auto px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-block px-4 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">
+                        PREMIUM DIGITAL AGENCY
+                    </div>
+<h1 class="font-display-lg text-display-lg leading-tight md:text-display-lg text-display-lg-mobile text-primary">
+                        당신의 비즈니스를<br/><span class="text-secondary">한 단계 더</span> 높입니다.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        eleveweb은 고도화된 기술력과 정교한 디자인 감각으로 고객사의 디지털 성장을 지원합니다. 단순한 웹사이트 제작을 넘어, 비즈니스의 구조적 우위를 확보하는 디지털 경험을 창조합니다.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="primary-button px-10 py-4 rounded-lg font-bold text-lg text-center transition-standard active:scale-95 h-[56px] flex items-center justify-center" href="#contact">
+                            무료 상담 신청하기
+                        </a>
+<a class="secondary-button px-10 py-4 rounded-lg font-bold text-lg text-center transition-standard active:scale-95 h-[56px] flex items-center justify-center" href="#portfolio">
+                            포트폴리오 보기
+                        </a>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="relative rounded-xl overflow-hidden global-shadow transform hover:scale-[1.02] transition-standard">
+<img class="w-full h-full object-cover" data-alt="A high-fidelity workspace with a sleek ultra-wide monitor displaying a complex, minimalist web application interface. The lighting is crisp and professional, featuring soft blue and white tones that align with a premium corporate aesthetic. The background is a blurred high-end office environment with glass partitions and subtle technical lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw762SSsrAnkpGHmxV9F-sBvh3glR3rlf3mz_nZcHDY11lmC4ql5_A5xeQR9sQm2LYl_astHws2ra5hcWTOIXyzq_voVlKnTaPXc9sCZIbYNcKQ0LOPVabJtC9cMAZQWfG_M04d3AfTz_-mSIqozASfZYySEqoLA2RCP0myCwVEaZBJNnhe-aYIZTTksmBNCdVspWkubtEgq6wA-L2fSQFvnZTzbLr0tl5AYnzMQzIQ4zSULgzM3Yy"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-[120px] bg-surface" id="services">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Core Services</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">비즈니스 성공을 위한 최적화된 디지털 솔루션을 제안합니다.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-lg global-shadow card-hover transition-standard group">
+<div class="w-14 h-14 bg-secondary-fixed flex items-center justify-center rounded-lg mb-6 group-hover:bg-secondary transition-standard">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white" data-icon="web">web</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Web Design &amp; Dev</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            브랜드 아이덴티티를 반영한 맞춤형 디자인과 최신 프레임워크 기반의 고성능 웹사이트를 구축합니다.
+                        </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-lg global-shadow card-hover transition-standard group">
+<div class="w-14 h-14 bg-secondary-fixed flex items-center justify-center rounded-lg mb-6 group-hover:bg-secondary transition-standard">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">SEO &amp; Digital Marketing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            검색 엔진 최적화와 정밀한 타겟팅 광고를 통해 귀하의 비즈니스 가시성을 극대화합니다.
+                        </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-lg global-shadow card-hover transition-standard group">
+<div class="w-14 h-14 bg-secondary-fixed flex items-center justify-center rounded-lg mb-6 group-hover:bg-secondary transition-standard">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white" data-icon="settings_suggest">settings_suggest</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Maintenance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            정기적인 보안 업데이트와 성능 최적화를 통해 365일 중단 없는 안정적인 운영을 보장합니다.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-[120px] bg-surface-container-low" id="portfolio">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Portfolio</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">eleveweb이 완성한 정교한 디지털 작품들을 확인해 보세요.</p>
+</div>
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-2 hover:underline" href="#">
+                        VIEW ALL PROJECTS <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Project 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-white mb-6">
+<div class="aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover transition-standard group-hover:scale-105" data-alt="A premium fintech dashboard web application with sleek dark mode aesthetics, featuring vibrant data visualization charts in neon blues and cyans. The layout is structured in a modern bento grid style, showcasing clean typography and high-contrast elements that suggest security and technical precision. The background is a subtle gradient of deep charcoal and navy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA86abOi9Zf8H3AX_ffZRcc3xQNKdD8Wr7-7pbwc1OgXrWq9yV6WiJweea8n4K7H5It32d0k7bJ0hsxW6rwX1JFN3G6IzoWOvUGGWM-A4aNHgt409gjO-OB3Y0KafDaD-DSNrQvhW-0jWg6-2fejWYmeAFLE-y_052wDWE-8snhOw3kTYhfgChnUw9lcdaZKB5Z6Tn6f0HN6fduS65IbDl34jqPbqFs-uLmXNzQYenuAEjEyJhkRejB"/>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-2">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[12px] font-semibold rounded">Fintech</span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[12px] font-semibold rounded">Dashboard</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-2 group-hover:text-secondary transition-standard">Alpha Financial Platform</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">데이터 시각화와 사용자 경험이 극대화된 금융 자산 관리 서비스</p>
+</div>
+<!-- Project 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-white mb-6">
+<div class="aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover transition-standard group-hover:scale-105" data-alt="A minimalist luxury e-commerce website for a high-end watch brand. The design uses expansive white space, elegant serif typography, and professional studio photography of luxury timepieces. The lighting is soft and golden, creating a sophisticated and exclusive atmosphere. The user interface elements are subtle, with a focus on high-fidelity product imagery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi2y3ef_BDbKzuT6GwPug7BPjrblhD_FQnjvvwoLXAt45910GRNE5srdmN1IXwhTyTWJN1nIqAX6-uUqhLJuSV9ed-7iCHc877JC6UGTqxcbvRFt1qaOaYLeWh6djrn8kdyMC7IgK7aLc44J1n2jl0DUB7wS_0t16WctQZraBGt99t6zsyfO-Glg4-P5kybQ6iicBCtBmMuYTBW5ZONlaoMpuG2kQfy9g58GRXmHo7BX89ulF0g718"/>
+</div>
+</div>
+<div class="flex items-center gap-4 mb-2">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[12px] font-semibold rounded">E-commerce</span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[12px] font-semibold rounded">Luxury</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-2 group-hover:text-secondary transition-standard">Chronos Watch Boutique</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">브랜드 가치를 높이는 고품격 럭셔리 브랜드 커머스 구축</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-[120px] bg-surface relative overflow-hidden" id="process">
+<div class="max-w-[1280px] mx-auto px-8 relative z-10">
+<div class="text-center mb-20 space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Our Process</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">투명하고 체계적인 5단계 프로세스를 통해 최고의 결과물을 보장합니다.</p>
+</div>
+<div class="relative">
+<!-- Process Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] border-t border-dashed border-outline-variant"></div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+<!-- Step 1 -->
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest global-shadow flex items-center justify-center mb-6 relative z-10 transition-standard group-hover:bg-secondary">
+<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-white" data-icon="forum">forum</span>
+</div>
+<span class="text-secondary font-bold text-sm mb-2">STEP 01</span>
+<h5 class="font-headline-sm text-lg mb-2">Consultation</h5>
+<p class="text-on-surface-variant text-sm">비즈니스 목표와 요구사항을 심층 분석합니다.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest global-shadow flex items-center justify-center mb-6 relative z-10 transition-standard group-hover:bg-secondary">
+<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-white" data-icon="tactic">tactic</span>
+</div>
+<span class="text-secondary font-bold text-sm mb-2">STEP 02</span>
+<h5 class="font-headline-sm text-lg mb-2">Planning</h5>
+<p class="text-on-surface-variant text-sm">최적의 기술 스택과 상세 설계도를 작성합니다.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest global-shadow flex items-center justify-center mb-6 relative z-10 transition-standard group-hover:bg-secondary">
+<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-white" data-icon="palette">palette</span>
+</div>
+<span class="text-secondary font-bold text-sm mb-2">STEP 03</span>
+<h5 class="font-headline-sm text-lg mb-2">Design</h5>
+<p class="text-on-surface-variant text-sm">브랜드 감성을 담은 고해상도 UI를 디자인합니다.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest global-shadow flex items-center justify-center mb-6 relative z-10 transition-standard group-hover:bg-secondary">
+<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-white" data-icon="code">code</span>
+</div>
+<span class="text-secondary font-bold text-sm mb-2">STEP 04</span>
+<h5 class="font-headline-sm text-lg mb-2">Development</h5>
+<p class="text-on-surface-variant text-sm">안정적이고 빠른 코드로 웹을 개발합니다.</p>
+</div>
+<!-- Step 5 -->
+<div class="relative flex flex-col items-center text-center group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest global-shadow flex items-center justify-center mb-6 relative z-10 transition-standard group-hover:bg-secondary">
+<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-white" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<span class="text-secondary font-bold text-sm mb-2">STEP 05</span>
+<h5 class="font-headline-sm text-lg mb-2">Launch</h5>
+<p class="text-on-surface-variant text-sm">최종 검수 후 서비스를 전 세계에 배포합니다.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-[120px] bg-primary-container text-on-primary">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-1 space-y-6">
+<h2 class="font-headline-md text-headline-md text-white">Client Success Stories</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container">수많은 파트너사들이 eleveweb과 함께하며 디지털 혁신을 경험했습니다.</p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary transition-standard">
+<span class="material-symbols-outlined text-white" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary transition-standard">
+<span class="material-symbols-outlined text-white" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-primary p-10 rounded-lg global-shadow">
+<div class="flex text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-white/80 mb-8 italic">"복잡했던 요구사항을 아주 명확하게 정리해 주셨고, 기대 이상의 디자인 퀄리티가 나왔습니다. 비즈니스 매출이 30% 이상 성장하는 데 큰 기여를 했습니다."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male entrepreneur with a friendly and confident expression. He is wearing a modern charcoal blazer over a clean white shirt. The background is a blurred, high-end office lobby with soft natural lighting, reflecting a successful corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT6j2R6oUSDaeK4mf-XWy3rdWKEkOTdj0UvL5k4XC_QlGd0gqHm4ZNE7ymcLz_Dh17jlcxiIOgw0eW9OFJnsqRApCJWcaI1gMAq37e_8nNpRFWyOGxn88HCiPpzIcwZzhAjKh90VF_iDc7RkIUCgBaAAO87xCUu3_aGeL2Nz3biUmmX_RuI5KSjkfXmuFtQIJVSpojL7F0X_DliC8udMOYQPNbpPlIhEzGxBejBOV76W671C_OscT1"/>
+</div>
+<div>
+<h6 class="font-bold text-white">김민수 대표</h6>
+<p class="text-sm text-white/60">테크온 글로벌</p>
+</div>
+</div>
+</div>
+<div class="bg-primary p-10 rounded-lg global-shadow">
+<div class="flex text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-white/80 mb-8 italic">"단순히 예쁜 웹사이트가 아니라 비즈니스 로직에 충실한 개발 능력이 놀랍습니다. 유지보수 대응 속도도 매우 빨라 안심하고 맡기고 있습니다."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young female creative director with stylish glasses and a professional demeanor. She is wearing a minimal black turtleneck. The lighting is soft and studio-quality, with a neutral light grey background that emphasizes a clean and modern professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkfIV76AZDYpVMsP9HOhINyHw6vxNYOBV5xX5EfNuwll89HHzcmZdb_beCNzzUkZnaUCvEXN4yobhrSLzKBol3Y2H8vjaALaP0yNecnse8dBT9ZVhjgMvE5qV5lRCdVS4Q-ELURMnmXNMXC-4oUYRFxTdlojwq4qh6dmQO5WOI6sQkikdxaKBoyXYB1SruNgzoMSlbGA0y80OYxDTfCCpMnGY2MS3fLE-lnmZSJlR5NqbAJsoEoLs2"/>
+</div>
+<div>
+<h6 class="font-bold text-white">이지현 이사</h6>
+<p class="text-sm text-white/60">아르떼 스튜디오</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-[120px] bg-surface-container-lowest" id="contact">
+<div class="max-w-[1280px] mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div class="space-y-12">
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Contact Us</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">새로운 프로젝트를 계획 중이신가요? 지금 바로 전문가의 조언을 받아보세요.</p>
+</div>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="mail">mail</span>
+</div>
+<div>
+<h6 class="font-bold text-lg">Email</h6>
+<p class="text-on-surface-variant">contact@eleveweb.com</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="call">call</span>
+</div>
+<div>
+<h6 class="font-bold text-lg">Phone</h6>
+<p class="text-on-surface-variant">02-1234-5678</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h6 class="font-bold text-lg">Office</h6>
+<p class="text-on-surface-variant">서울특별시 강남구 테헤란로 123, 15층</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface p-10 rounded-xl global-shadow">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold">이름</label>
+<input class="w-full px-4 py-3 rounded border border-outline-variant focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-standard" placeholder="성함을 입력하세요" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">연락처</label>
+<input class="w-full px-4 py-3 rounded border border-outline-variant focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-standard" placeholder="010-0000-0000" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">이메일</label>
+<input class="w-full px-4 py-3 rounded border border-outline-variant focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-standard" placeholder="example@email.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">문의 내용</label>
+<textarea class="w-full px-4 py-3 rounded border border-outline-variant focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-standard" placeholder="프로젝트에 대해 간략히 설명해 주세요" rows="4"></textarea>
+</div>
+<button class="w-full primary-button py-4 rounded-lg font-bold text-lg transition-standard active:scale-95" type="submit">문의 제출하기</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16">
+<div class="col-span-1 md:col-span-1 space-y-6">
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">eleveweb</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Precision-engineered digital experiences. 귀하의 디지털 혁신을 위한 가장 확실한 선택입니다.</p>
+</div>
+<div class="space-y-4">
+<h6 class="font-bold">Services</h6>
+<nav class="flex flex-col space-y-2 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">Web Design</a>
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">Development</a>
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">E-commerce</a>
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">SEO Support</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h6 class="font-bold">Company</h6>
+<nav class="flex flex-col space-y-2 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-standard hover:translate-x-1" href="#">Privacy Policy</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h6 class="font-bold">Subscribe</h6>
+<p class="text-sm text-on-surface-variant">최신 디지털 트렌드와 뉴스레터를 받아보세요.</p>
+<div class="flex gap-2">
+<input class="flex-1 px-4 py-2 rounded bg-surface-container-low border-none focus:ring-2 focus:ring-secondary" placeholder="Email" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded font-bold hover:bg-black transition-standard">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-8 py-8 border-t border-outline-variant text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 eleveweb. Precision-engineered digital experiences. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Offset for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Simple Active Navigation Tracking
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('header nav a');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('nav-active');
+                }
+            });
+        });
+    </script>
+</body></html>
